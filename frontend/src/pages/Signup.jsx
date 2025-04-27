@@ -39,10 +39,7 @@ export default function SignUp() {
         }
 
         try {
-            // console.log(`${BASE_URL}register`);  
-            // const response = await axios.post(`${BASE_URL}register`, {name, email, password})
             const response = await axios.post("http://localhost:5000/api/auth/register", {name, email, password})
-            // const response = await axios.post("http://localhost:5000/api/auth/register")
             if(response.data.success){
                 toast.success("Account created successfully");
                 navigate("/login");

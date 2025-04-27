@@ -31,7 +31,6 @@ export default function TaskBoard() {
     }
 
     if (editingTask.index !== null) {
-      // Editing existing task
       setTasks(prev => {
         const updatedColumn = [...prev[editingTask.column]];
         updatedColumn[editingTask.index] = newTask;
@@ -41,7 +40,6 @@ export default function TaskBoard() {
         };
       });
     } else {
-      // Adding new task
       setTasks(prev => ({
         ...prev,
         todo: [...prev.todo, newTask]
