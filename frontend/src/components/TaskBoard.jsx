@@ -94,6 +94,7 @@ export default function TaskBoard() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <Column
+          className="bg-purple-100 p-4 rounded-lg"
           title="To Do"
           tasks={tasks.todo}
           color="purple"
@@ -103,6 +104,7 @@ export default function TaskBoard() {
         />
 
         <Column
+          className="bg-blue-100"
           title="In Progress"
           tasks={tasks.inProgress}
           color="blue"
@@ -112,6 +114,7 @@ export default function TaskBoard() {
         />
 
         <Column
+          className="bg-green-100 p-4 rounded-lg"
           title="Done"
           tasks={tasks.done}
           color="green"

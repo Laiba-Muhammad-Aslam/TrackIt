@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { useAuth } from '../context/ContextProvider'
+import { useAuth } from '../context/ContextProvider.jsx'
 
 export default function Navbar() {
     const {user, logout} = useAuth();
@@ -13,7 +13,7 @@ export default function Navbar() {
     </a>
     <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
       <p className='mr-4'>{!user ? "username" : user.name}</p>
-      <button className='bg-red-600 text-white p-3 rounded' onClick={logout()}>Logout</button>
+      <button className='bg-red-600 text-white p-3 rounded' onClick={logout}>Logout</button>
     </nav>
   </div>
 </header>

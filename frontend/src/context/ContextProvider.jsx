@@ -1,12 +1,13 @@
 import axios from 'axios';
 import React, {Children, createContext, useContext, useState, useEffect} from 'react'
 import { BASE_URL } from "../api";
-
+import { useNavigate } from 'react-router-dom';
 
 const authContext = createContext();
 
 export default function ContextProvider({children}) {
     const [user, setUser] = useState(null);
+    const navigate = useNavigate()
 
     const login = (user) => {
         setUser(user);
@@ -15,6 +16,7 @@ export default function ContextProvider({children}) {
     const logout = () => {
       localStorage.removeItem("token");
       setUser(null);
+      navigate("/");
     }
 
     useEffect(() => {

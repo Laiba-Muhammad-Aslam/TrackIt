@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import HomePage from "./pages/Home"
 import SignUp from "./pages/Signup"
 import Login from "./pages/Login"
@@ -10,7 +10,7 @@ import ForgetPassword from './pages/ForgetPassword';
 function App() {
 
   return (
-    <Router>
+    <>
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/signup" element={<SignUp />} />
@@ -19,7 +19,7 @@ function App() {
       <Route path="/forget" element={<ForgetPassword />} />
     </Routes>
     <ToastContainer />
-  </Router>
+  </>
   )
 }
 
