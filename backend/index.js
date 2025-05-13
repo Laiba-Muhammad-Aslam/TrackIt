@@ -7,7 +7,7 @@ import authRouter from "./routes/auth.js"
 dotenv.config();
 
 const corsOptions ={
-    origin:'http://localhost:5173', 
+    origin:'https://track-it-frontend-beta.vercel.app/', 
     credentials:true,            
     optionSuccessStatus:200
 }
