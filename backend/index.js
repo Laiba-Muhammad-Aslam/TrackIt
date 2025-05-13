@@ -18,7 +18,11 @@ app.use(express.json())
 app.use("/api/auth", authRouter);
 app.use("/api/task", authRouter);
 
-app.listen(5000, () => {
+app.get("/", (req, res) => {
+    res.send("Welcome to my Website");
+})
+
+app.listen(3000, () => {
     connectToMongoDB();
     console.log(`Server started`)
 })
