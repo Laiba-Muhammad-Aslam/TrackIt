@@ -6,14 +6,14 @@ import authRouter from "./routes/auth.js"
 
 dotenv.config();
 
+const corsOptions ={
+    origin:'http://localhost:5174', 
+    credentials:true,            
+    optionSuccessStatus:200
+}
+
 const app = express();
-app.use(cors(
-    {
-        origin: [""],
-        methods: ["POST", "GET"],
-        credentials: true
-    }
-));
+app.use(cors(corsOptions));
 app.use(express.json())
 app.use("/api/auth", authRouter);
 app.use("/api/task", authRouter);
