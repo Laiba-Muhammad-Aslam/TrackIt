@@ -39,7 +39,7 @@ export default function SignUp() {
         }
 
         try {
-            const response = await axios.post("http://localhost:5000/api/auth/register", {name, email, password})
+            const response = await axios.post("http://localhost:3000/api/auth/register", {name, email, password})
             if(response.data.success){
                 toast.success("Account created successfully");
                 navigate("/login");
@@ -50,7 +50,7 @@ export default function SignUp() {
             if(error.status == 401){
                 toast.error("User already exists");
             }else{
-                toast.error("Signup failed. Try again.");
+                toast.error("Signup failed. Try again.", error);
             }
 
            
