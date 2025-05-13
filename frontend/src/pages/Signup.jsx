@@ -39,7 +39,7 @@ export default function SignUp() {
         }
 
         try {
-            const response = await axios.post("http://localhost:3000/api/auth/register", {name, email, password})
+            const response = await axios.post("https://track-it-backend.vercel.app/api/auth/register", {name, email, password})
             if(response.data.success){
                 toast.success("Account created successfully");
                 navigate("/login");
