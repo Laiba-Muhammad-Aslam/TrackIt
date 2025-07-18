@@ -4,7 +4,7 @@ import axios from "axios"
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {toast} from "react-toastify"
-// import { BASE_URL } from "../api";
+import { BASE_URL } from "../api";
 
 export default function SignUp() {
   const [name, setName] = useState("");
@@ -39,7 +39,7 @@ export default function SignUp() {
         }
 
         try {
-            const response = await axios.post("https://track-it-backend.vercel.app/api/auth/register", {name, email, password})
+            const response = await axios.post(`${BASE_URL}register`, {name, email, password})
             if(response.data.success){
                 toast.success("Account created successfully");
                 navigate("/login");
